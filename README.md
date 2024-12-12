@@ -1,5 +1,21 @@
 # Sistema de Gerenciamento do Condomínio
 
+## Apps
+
+# Condominios
+Na app condomio temos toda gestão e organização(CRUD) referente a um usuario, ele está dividido em duas classes, são elas, casa e condominio.
+
+- Codominio: Um condominio pode conter 0 ou N casas. Ao criar um condominio é verificado se a casa e o endereço que está sendo passado já existe, para garantir que não vai haver uma mesma casa em dois condominios diferentes.
+
+- Casa: Ao criar um casa é verificado se o numero e bloco passado já existe, caso exista a casa não sera criada e uma mesagem de erro será retornada caso contrario a casa será criada.
+
+# Usuarios
+A app usuarios é responsavel pelo controle de usuarios e possui duas entidades User e Morador
+
+- User: A classe user é uma classe generica de ususario que responsavel por dados pessoais e gerais
+
+- Morador: O morador herda de user, e adiciona mais algumas informações
+
 ## Requisitos
 
 - Python 3.x

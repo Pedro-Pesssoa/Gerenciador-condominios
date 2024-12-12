@@ -10,6 +10,7 @@ class UserProfileExample(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
+        """Nomeclatura para Classe"""
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
 
@@ -25,6 +26,7 @@ class Morador(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
+        """Nomeclatura para Classe"""
         verbose_name = "Morador"
         verbose_name_plural = "Moradores"
 
