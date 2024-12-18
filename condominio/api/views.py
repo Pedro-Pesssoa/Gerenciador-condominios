@@ -153,7 +153,7 @@ class CasaViewSet(ModelViewSet):
 
     @action(methods=['get'], detail=False, url_path="listar")
     def listar_casas(self):
-        """Ação para listar todos as casas."""
+        """Ação para listar todas as casas."""
 
         try:
             casas = CasaModel.objects.all()

@@ -22,6 +22,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from usuarios.api.views import MoradorViewSet, UserProfileExampleViewSet
 from condominio.api.views import CondominioViewSet, CasaViewSet
 
+
 router = SimpleRouter()
 
 router.register("users", UserProfileExampleViewSet, basename="users")
