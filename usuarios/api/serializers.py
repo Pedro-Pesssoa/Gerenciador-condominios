@@ -23,3 +23,15 @@ class MoradorCreateSerializer(serializers.Serializer):
     telefone = serializers.CharField(max_length=20)
     login = serializers.CharField(max_length=100)
     senha = serializers.CharField(max_length=100)
+
+    def validate_cpf(self, value):
+        """Valida a unicidade do CPF."""
+        if Morador.objects.filter(cpf=value).exists():
+            raise serializers.ValidationError("Já existe um morador com este CPF.")
+        return value
+
+    def validate_login(self, value):
+        """Valida a unicidade do login."""
+        if Morador.objects.filter(user__username=value).exists():
+            raise serializers.ValidationError("Já existe um morador com este login.")
+        return value

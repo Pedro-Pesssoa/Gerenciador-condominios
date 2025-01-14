@@ -85,7 +85,7 @@ class MoradorViewSet(ModelViewSet):
 
         except ValueError:
             return Response(
-                {"Info": "A sala já foi cadastrada antes!"},
+                {"Info": "O usuario já foi cadastrada antes!"},
                 status=status.HTTP_409_CONFLICT)
 
         except Exception:
@@ -126,7 +126,7 @@ class MoradorViewSet(ModelViewSet):
 
         except ValueError:
             return Response(
-                {"Info": "A sala já foi cadastrada antes!"},
+                {"Info": "O usuario já foi cadastrada antes!"},
                 status=status.HTTP_409_CONFLICT)
 
         except Exception:
@@ -166,7 +166,7 @@ class MoradorViewSet(ModelViewSet):
 
             except ValueError:
                 return Response(
-                    {"Info": "A sala já foi cadastrada antes!"},
+                    {"Info": "O usuario já foi cadastrada antes!"},
                     status=status.HTTP_409_CONFLICT)
 
             except Exception:
@@ -180,11 +180,10 @@ class MoradorViewSet(ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST)
 
     @action(methods=['get'], detail=False, url_path="listar")
-    def listar_moradores(self) -> Response:
+    def listar_moradores(self, request, *args, **kwargs):
         """Ação para listar todos os moradores."""
 
         try:
-
             moradores = Morador.objects.all()
             serializer = MoradorSerializer(moradores, many=True)
 
@@ -205,7 +204,7 @@ class MoradorViewSet(ModelViewSet):
 
         except ValueError:
             return Response(
-                {"Info": "A sala já foi cadastrada antes!"},
+                {"Info": "O usuario já foi cadastrada antes!"},
                 status=status.HTTP_409_CONFLICT)
 
         except Exception:
@@ -249,7 +248,7 @@ class MoradorViewSet(ModelViewSet):
 
         except ValueError:
             return Response(
-                {"Info": "A sala já foi cadastrada antes!"},
+                {"Info": "O usuario já foi cadastrada antes!"},
                 status=status.HTTP_409_CONFLICT)
 
         except Exception:

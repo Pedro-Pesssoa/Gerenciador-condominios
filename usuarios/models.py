@@ -6,7 +6,7 @@ class UserProfileExample(models.Model):
     """Model para perfil de usuário com informações adicionais."""
     phone_number = models.CharField(max_length=12)
     address = models.CharField(max_length=150)
-    birth_date = models.DateField()
+    birth_date = models.DateField(null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
@@ -21,7 +21,7 @@ class UserProfileExample(models.Model):
 class Morador(models.Model):
     """Model para moradores associados a usuários."""
     nome = models.CharField(max_length=140)
-    cpf = models.CharField(max_length=16, unique=True)
+    cpf = models.CharField(max_length=16, unique=False)
     telefone = models.CharField(max_length=20)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
