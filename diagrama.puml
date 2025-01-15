@@ -1,0 +1,40 @@
+@startuml
+class User {
+    +username
+    +email
+    +password
+}
+
+class UserProfileExample {
+    +phone_number: CharField
+    +address: CharField
+    +birth_date: DateField
+    +user: OneToOneField (User)
+}
+
+class Morador {
+    +nome: CharField
+    +cpf: CharField
+    +telefone: CharField
+    +user: OneToOneField (User)
+}
+
+class CasaModel {
+    +numero: IntegerField
+    +bloco: IntegerField
+    +quantidade_quartos: IntegerField
+    +quantidade_banheiros: IntegerField
+    +area_lazer: BooleanField
+    +garagem: BooleanField
+    +disponivel: BooleanField
+}
+
+class CondominioModel {
+    +casa_numero: IntegerField
+    +endereco: CharField
+}
+
+UserProfileExample "1" -- "1" User
+Morador "1" -- "1" User
+CondominioModel "1" --> "*" CasaModel
+@enduml
